@@ -1,5 +1,6 @@
 type Review {
   propertyId: ID!
+  userId: ID!
   stars: Int
   body: String
 }

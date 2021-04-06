@@ -1,6 +1,19 @@
+# A Tentative at a directive to mark a field as key
+# Key field used on types to JOIN / Stitch delegation to other components
+directive @keyField(field: String!) on FIELD_DEFINITION
+# A Dummy field Authorization Directive
+directive @authorization(permission: String!) on FIELD_DEFINITION
+
 type Property {
   reviews: [Review]
+      @keyField(field: "userId") # UserId on Reviews is key to resolving a Reviewer
 }
+
+type Review {
+  reviewer: User 
+    @authorization(permission: "reviewer_details")
+}
+
 type Query {
   # Listing by id
   listing(id: ID!) : Property

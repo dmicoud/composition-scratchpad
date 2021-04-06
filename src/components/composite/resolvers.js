@@ -1,5 +1,6 @@
 'use strict';
 const GraphQLComponent = require('graphql-component');
+const { Kind } = require('graphql');
 
 const resolvers = {
   Query: {
@@ -22,6 +23,18 @@ const resolvers = {
         targetRootField: 'reviews',
         args: {
           propertyId: root.id
+        }
+      });
+    }
+  },
+  Review: {
+    async reviewer(root, args, context, info) {
+      return GraphQLComponent.delegateToComponent(this.usersComponent, {
+        contextValue: context,
+        info,
+        targetRootField: 'user',
+        args: {
+          id: root.userId
         }
       });
     }

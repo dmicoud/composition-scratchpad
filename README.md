@@ -12,9 +12,10 @@ A simple GraphQL scratchpad to experiment with composition using [GraphQL compon
 The server application renders an executable schema composed of:
 - A Property Component
 - A Reviews Component
+- A Users Component
 
 As a result of composition, the executable schema provides property and reviews query.
-Additionally, it exposes a listing query, extending a property with reviews.
+Additionally, it exposes a listing query, extending a property with reviews and reviews with the reviewer user information.
 
 ```
 query {
@@ -33,6 +34,9 @@ query {
     reviews {
       stars
       body
+      reviewer {
+        name
+      }
     }
   }
 }
