@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "Scratchpad for GraphQL composition",
   "main": "index.js",
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEBUG=directive nodemon --inspect ./src/server/index.js"
+    "start": "DEBUG=directive nodemon --inspect ./src/server/index.js",
+    "build": "bash ./generate-build-info.sh && NODE_ENV=production npm run build:server",
+    "build:server": "rm -rf ./build/server && BABEL_ENV=server babel src --copy-files --source-maps --ignore='**/*.test.js,**/*.spec.js' --out-dir ./build"
   },
   "author": "Didier Micoud <dmicoud@expediagroup.com>",
   "license": "MIT",
@@ -16,6 +22,7 @@
     "graphql-component": "^2.1.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "nodemon": "^2.0.2"
   }
 }

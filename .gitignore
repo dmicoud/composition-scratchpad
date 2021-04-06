@@ -103,6 +103,10 @@ dist
 # TernJS port file
 .tern-port
 
+# Build
+build
+config/buildInfo.js
+
 # VSCode Local files
 *.code-workspace
 .vscode/

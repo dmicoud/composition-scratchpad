@@ -1,7 +1,14 @@
 type Property {
   id: ID!
   name: String
+  geoLocation: GeoLocation
 }
+
+type GeoLocation {
+  latitude: Float!
+  longitude: Float!
+}
+
 type Query {
   property(id: ID!) : Property
 }

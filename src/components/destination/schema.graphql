@@ -1,0 +1,14 @@
+type Destination {
+  geoLocation: GeoLocation
+  name: String
+  pointOfInterests: [String]
+}
+
+type GeoLocation {
+  latitude: Float!
+  longitude: Float!
+}
+
+type Query {
+  destination(latitude: Float!, longitude: Float!) : Destination
+}

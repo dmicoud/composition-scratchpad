@@ -25,6 +25,18 @@ const resolvers = {
           propertyId: root.id
         }
       });
+    },
+    async destinationDetails(root, args, context, info) {
+      return GraphQLComponent.delegateToComponent(this.destinationComponent, {
+        contextValue: context,
+        info,
+        targetRootField: 'destination',
+        args:
+        {
+          latitude: root.geoLocation.latitude,
+          longitude: root.geoLocation.longitude
+        }
+      });
     }
   },
   Review: {
