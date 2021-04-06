@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect ./src/server/index.js"
+    "start": "DEBUG=directive nodemon --inspect ./src/server/index.js"
   },
   "author": "Didier Micoud <dmicoud@expediagroup.com>",
   "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^2.22.2",
+    "debug": "^4.3.1",
     "graphql": "^15.5.0",
     "graphql-component": "^2.1.6"
   },
