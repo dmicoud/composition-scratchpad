@@ -1,0 +1,8 @@
+type Review {
+  propertyId: ID!
+  stars: Int
+  body: String
+}
+type Query {
+  reviews(propertyId: ID!) : [Review]
+}

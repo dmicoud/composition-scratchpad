@@ -1,0 +1,20 @@
+{
+  "name": "graphql-composition",
+  "version": "1.0.0",
+  "description": "Scratchpad for GraphQL composition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect ./src/server/index.js"
+  },
+  "author": "Didier Micoud <dmicoud@expediagroup.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.22.2",
+    "graphql": "^15.5.0",
+    "graphql-component": "^2.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

@@ -1,0 +1,7 @@
+type Property {
+  reviews: [Review]
+}
+type Query {
+  # Listing by id
+  listing(id: ID!) : Property
+}

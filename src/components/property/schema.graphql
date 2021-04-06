@@ -1,0 +1,7 @@
+type Property {
+  id: ID!
+  name: String
+}
+type Query {
+  property(id: ID!) : Property
+}
