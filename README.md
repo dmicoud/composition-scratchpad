@@ -41,3 +41,22 @@ query {
   }
 }
 ```
+
+## Development
+
+Running the app:
+```
+$ npm start
+```
+
+Building a docker image:
+```
+$ docker build -t dmicoud/composition-scratchpad .
+```
+
+Running a docker container
+```
+$ docker run -i -p 8080:4000 -d dmicoud/composition-scratchpad
+```
+
+Endpoint available at: http://localhost:8080/graphql 
