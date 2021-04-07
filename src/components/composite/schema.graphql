@@ -17,4 +17,5 @@ type Review {
 type Query {
   # Listing by id
   listing(id: ID!) : Property
+    @keyField(field: "id") # Property id is key to resolving Reviews
 }
